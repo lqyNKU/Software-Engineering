@@ -46,9 +46,8 @@ void writeFile(string& filename)
 		file << endl << endl;
 		file.close();
 	}
-	else {
-		cout << "ÎÞ·¨´ò¿ªÎÄ¼þ£º" << filename << endl;
-	}
+	else
+		cout << "æ— æ³•æ‰“å¼€æ–‡ä»¶:" << filename << endl;
 }
 
 void readFile(string& filename)
@@ -171,7 +170,7 @@ void digHoles(int hole_cnt)
 		int ran = dist(rng);
 		//cout << ran << endl;
 		
-		while (game_board[ran / 9][ran % 9] == 0) // Éú³ÉÁËÏàÍ¬µÄËæ»úÊý
+		while (game_board[ran / 9][ran % 9] == 0) // ç”Ÿæˆäº†ç›¸åŒçš„éšæœºæ•°
 		{
 			ran = dist(rng);
 		}
@@ -269,7 +268,7 @@ int main(int argc, char* argv[])
 	}
 	else if (arg1 == "-s") 
 	{
-		if (argc == 3) // ½âÎÄ¼þÖÐµÄÊý¶À
+		if (argc == 3) // è§£æ–‡ä»¶ä¸­çš„æ•°ç‹¬
 		{
 			
 		}
@@ -286,12 +285,12 @@ int main(int argc, char* argv[])
 		// cout << game_count << endl;
 		switch (argc)
 		{
-		case 3: // Ö»ÒªÇóÉú³ÉÓÎÏ·ÊýÁ¿ 
+		case 3: // åªè¦æ±‚ç”Ÿæˆæ¸¸æˆæ•°é‡ 
 		{
 			generateSudoGame(game_count);
 			break;
 		}
-		case 4: // Î¨Ò»½â -u
+		case 4: // å”¯ä¸€è§£ -u
 		{
 			string arg2 = argv[3];
 			bool flag = true;

@@ -1,8 +1,12 @@
-1.生成终盘：//合法参数范围：1-1000000
+1.生成终盘：//合法参数范围：1-10000
 Sudoku.exe -c -1 // invalid
 Sudoku.exe -c 1000001 // invalid
 Sudoku.exe -c 1000000000000 // invalid
+Sudoku.exe -c 0 // invalid
+Sudoku.exe -c 1
 Sudoku.exe -c 30
+Sudoku.exe -c 10000
+Sudoku.exe -c 30 -n 20 // invalid
 Sudoku.exe -c abc // invalid
 Sudoku.exe -c 30 xx // invalid
 
@@ -30,6 +34,7 @@ Sudoku.exe -s game1.txt // valid: 相对路径
 4 3 2 0 6 0 0 0 5
 
 Sudoku.exe -s game1.txt xx // invalid：多余参数
+Sudoku.exe -s game1.txt -n 20 // invalid：多余参数
 
 Sudoku.exe -s game2.txt  // invalid：不存在的文件
 /*game2.txt*/
@@ -73,11 +78,15 @@ Sudoku.exe -s D:\\tmp\\game4.txt // invalid: 无解
 Sudoku.exe -n -1 // invalid
 Sudoku.exe -n 10001 // invalid
 Sudoku.exe -n 1000000000000 // invalid
+Sudoku.exe -n 1
 Sudoku.exe -n 20
+Sudoku.exe -n 10000
 Sudoku.exe -n abc // invalid
+Sudoku.exe -n 20 -h //invalid
 
 4.生成不同难度游戏：//合法参数范围：1-3
 Sudoku.exe -m 2 // invalid
+Sudoku.exe -n 20 -m -1 // invalid
 Sudoku.exe -n 20 -m 0 // invalid
 Sudoku.exe -n 20 -m 1
 Sudoku.exe -n 20 -m 2
@@ -89,7 +98,9 @@ Sudoku.exe -n 20 -m 1000000000000 // invalid
 5.生成不同空数游戏：//合法参数范围：20-55
 Sudoku.exe -r 21 // invalid
 Sudoku.exe -n 20 -r 0 // invalid
+Sudoku.exe -n 20 -r 20
 Sudoku.exe -n 20 -r 35
+Sudoku.exe -n 20 -r 55
 Sudoku.exe -n 20 -r 65 // invalid
 Sudoku.exe -n 20 -r abc // invalid
 Sudoku.exe -n 20 -r 1000000000000 // invalid
@@ -101,6 +112,7 @@ Sudoku.exe -n 20 -u
 
 7.非法功能识别：
 Sudoku.exe -x
+Sudoku.exe --help
 Sudoku.exe -n 20 -x
 Sudoku.exe -n 20 -m 2 -x
 Sudoku.exe -n 20 -r 21 -x

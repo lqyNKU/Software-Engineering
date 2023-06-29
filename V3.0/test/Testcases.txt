@@ -1,11 +1,11 @@
-1.生成终盘：//合法参数范围：1-10000
+1.生成终盘：//合法参数范围：1-1000000
 Sudoku.exe -c -1 // invalid
 Sudoku.exe -c 1000001 // invalid
 Sudoku.exe -c 1000000000000 // invalid
 Sudoku.exe -c 0 // invalid
 Sudoku.exe -c 1
 Sudoku.exe -c 30
-Sudoku.exe -c 10000
+Sudoku.exe -c 1000000
 Sudoku.exe -c 30 -n 20 // invalid
 Sudoku.exe -c abc // invalid
 Sudoku.exe -c 30 xx // invalid
